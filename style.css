@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+  }
+
+
+  #gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    min-height: 100vh;
+    background-color: #fff;
+  }
+  
+  .container {
+    display: flex;
+    width: 90vw;
+    margin: 0.5rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.75s ease-in-out;
+  }
+  
+  .panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+  }
+
+  .panel style {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .panel label {
+    padding: 1.25rem;
+    border: 1px solid #fff3;
+    border-radius: 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    color: white;
+    backdrop-filter: blur(8px) brightness(85%);
+    -webkit-backdrop-filter: blur(8px) brightness(85%);
+    font-size: 2rem;
+    font-weight: 600;
+    word-break: break-all;
+    text-transform: uppercase;
+  }
+  
+  .panel.active {
+    flex: 5;
+    width: 50vw;
+  }
+  
+  .panel.active label {
+    font-size: 1.25rem;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    border-radius: 16px;
+  }
+
+  .panel label span {
+    display: block;
+    font-size: 0rem;
+    text-transform: none;
+    padding-top: 0.5;
+    font-weight: 400;
+  }
+
+  .panel.active label span {
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      flex-direction: column;
+      height: 100vh;
+    }
+  
+  }
